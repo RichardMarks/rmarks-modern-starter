@@ -1,0 +1,10 @@
+{
+    "source": "./src",
+    "destination": "./docs",
+    "title": "My App Name Documentation",
+    "index": "./README.md",
+    "test": {
+        "source": "./test",
+        "type": "mocha"
+    }
+}
