@@ -4,16 +4,16 @@
   "description": "A Modern Web Development Project Starter",
   "main": "src/main.js",
   "scripts": {
-      "start": "gulp serve",
-      "test": "gulp test",
-      "build": "gulp dist",
-      "clean": "gulp clean",
-      "gulp": "gulp",
-      "docs": "esdoc -c .esdoc.json"
+    "start": "gulp serve",
+    "test": "gulp test",
+    "build": "gulp dist",
+    "clean": "gulp clean",
+    "gulp": "gulp",
+    "docs": "esdoc -c .esdoc.json"
   },
   "repository": {
-      "type": "git",
-      "url": "git+ssh://git@github.com:RichardMarks/rmarks-modern-starter.git"
+    "type": "git",
+    "url": "git+ssh://git@github.com:RichardMarks/rmarks-modern-starter.git"
   },
   "keywords": [
     "gulp",
@@ -44,6 +44,7 @@
     "gulp-changed": "^1.3.0",
     "gulp-es-next": "^1.0.0",
     "gulp-inject": "^3.0.0",
+    "gulp-inject-string": "^1.1.0",
     "gulp-load-plugins": "^1.1.0",
     "gulp-preprocess": "^2.0.0",
     "gulp-sequence": "^0.4.4",
