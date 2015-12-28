@@ -1,5 +1,5 @@
-import {describe, it, expect} from './imports';
-import {Stage} from '../src/main';
+import {describe, it, expect} from '../imports';
+import {Stage} from '../../src/canvas/Stage';
 
 describe('Stage', () => {
     it('is available', () => {

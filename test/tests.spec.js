@@ -1,0 +1,2 @@
+
+import './canvas/Stage.spec';

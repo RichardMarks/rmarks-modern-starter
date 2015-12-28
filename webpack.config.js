@@ -25,7 +25,7 @@ export default (DEBUG, PATH, PORT=3000) => ({
                 loader: "babel-loader",
                 query: {
                     plugins: ['transform-runtime'],
-                    presets: ['es2015'],
+                    presets: ['react','es2015'],
                 }
             },
             {

@@ -6,7 +6,7 @@ export default (DEBUG, PATH, PORT=3001) => ({
     entry: (DEBUG ? [
         `webpack-dev-server/client?http://localhost:${PORT}`,
     ] : []).concat([
-        'mocha!./test/tests',
+        'mocha!./test/tests.spec',
     ]),
     output: {
         path: path.resolve(__dirname, PATH, "generated"),
@@ -26,7 +26,7 @@ export default (DEBUG, PATH, PORT=3001) => ({
                 loader: "babel-loader",
                 query: {
                     plugins: ['transform-runtime'],
-                    presets: ['es2015'],
+                    presets: ['react','es2015'],
                 }
             },
             {
