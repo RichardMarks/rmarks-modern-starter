@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <title>Tests for My App Name</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <!-- inject:app:css -->
+        <!-- endinject -->
+    </head>
+    <body>
+        <div id="container">
+            <section id="game"><canvas id="gamecanvas" width="960" height="540" tabindex="1" onclick="document.getElementById('gamecanvas').focus();"></canvas></section>
+        </div>
+        <!-- inject:app:js -->
+        <!-- endinject -->
+        <script>
+            window.onload = function (e) {
+                document.getElementById('gamecanvas').focus();
+            };
+        </script>
+    </body>
+</html>
