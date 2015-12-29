@@ -1,7 +1,7 @@
 # A Modern Web Development Project Starter
-> Last Updated December 28th 2015
+> Last Updated December 29th 2015
 
-* ECMAScript 6 via Babel 3 for modular modern code support
+* ECMAScript 6 via Babel 6.x for modular modern code support
 * WebPack & Dev Server for distribution packaging
 * Gulp for building
 * Mocha & Chai for testing
