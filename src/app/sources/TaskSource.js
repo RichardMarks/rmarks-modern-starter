@@ -11,7 +11,7 @@ export default {
             if (false) {
                 reject('Network Error');
             } else {
-                setTimeout(() => resolve(mockData), 3000);
+                setTimeout(() => resolve(mockData), 300);
             }
         });
     }

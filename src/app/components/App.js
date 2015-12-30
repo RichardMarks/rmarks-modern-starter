@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import {BaseComponent} from './BaseComponent';
 import {TaskList} from './TaskList';
+import {AddTask} from './AddTask';
 import TaskStore from '../stores/TaskStore';
 import TaskActions from '../actions/TaskActions';
 
@@ -27,6 +28,7 @@ export class App extends BaseComponent {
         return (
             <div>
                 <h1>Tasks</h1>
+                <AddTask />
                 <TaskList tasks={this.state.tasks} />
             </div>
         );

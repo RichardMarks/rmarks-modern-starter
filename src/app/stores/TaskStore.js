@@ -6,10 +6,15 @@ class TaskStore {
         this.tasks = [];
         this.errorMessage = null;
         this.bindListeners({
+            handleAddTask: TaskActions.ADD_TASK,
             handleUpdateTasks: TaskActions.UPDATE_TASKS,
             handleFetchTasks: TaskActions.FETCH_TASKS,
             handleTasksFailed: TaskActions.TASKS_FAILED
         });
+    }
+
+    handleAddTask(task) {
+        this.tasks.push(task);
     }
 
     handleUpdateTasks(tasks) {
