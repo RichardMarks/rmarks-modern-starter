@@ -25,12 +25,23 @@ class TaskActions {
         return tasks;
     }
 
+    saveTasks(tasks) {
+        return tasks;
+    }
+
     fetchTasks() {
         return dispatch => {
             dispatch();
-            TaskSource.fetch()
+            // try local first
+            TaskSource.fetchLocal()
                 .then(tasks => this.updateTasks(tasks))
-                .catch(errorMessage => this.tasksFailed(errorMessage));
+                .catch(errorMessage => {
+                    // no local tasks, read remote tasks
+                    window.console.log(`${errorMessage}`);
+                    TaskSource.fetchRemote()
+                        .then(tasks => this.updateTasks(tasks))
+                        .catch(errorMessage => this.tasksFailed(errorMessage));
+                });
         };
     }
 
