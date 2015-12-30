@@ -1,7 +1,7 @@
 {
-  "name": "rmarks-modern-starter-react",
+  "name": "rmarks-modern-starter-react-todo",
   "version": "1.0.0",
-  "description": "A Modern Web Development Project Starter with ReactJS",
+  "description": "Task List App using ES6, React, and Alt",
   "main": "src/main.js",
   "scripts": {
     "start": "gulp serve",

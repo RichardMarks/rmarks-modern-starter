@@ -3,11 +3,22 @@ import ReactDom from 'react-dom';
 import {BaseComponent} from './BaseComponent';
 import TaskActions from '../actions/TaskActions';
 
+/**
+ * provides the component which renders a single task of the task list application
+ */
 export class Task extends BaseComponent {
+    /**
+     * class constructor
+     */
     constructor() {
         super('removeTask', 'completeTask');
     }
 
+    /**
+     * render the component
+     * @return {ReactElement} React element to be rendered
+     * @see https://facebook.github.io/react/docs/component-specs.html#render
+     */
     render() {
         let { task } = this.props;
 
@@ -38,10 +49,16 @@ export class Task extends BaseComponent {
         }
     }
 
+    /**
+     * event handler to mark the task as done
+     */
     completeTask() {
         TaskActions.completeTask(this.props.task.id);
     }
 
+    /**
+     * event handler to remove the task from the task list
+     */
     removeTask() {
         TaskActions.removeTask(this.props.task.id);
     }

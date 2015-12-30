@@ -16,13 +16,24 @@ function loadDataFromLocal() {
     return null;
 }
 
-export default {
-    saveLocal: (tasks) => {
+/**
+ * provides the data source for the task list applciation
+ */
+export class TaskSource {
+    /**
+     * saves task list data to localStorage
+     * @param {Array<Object>} tasks - list of tasks to save
+     */
+    saveLocal(tasks) {
         tasks = window.btoa(window.JSON.stringify({tasks}));
         window.localStorage.setItem(TASK_LS_ID, tasks);
-    },
+    }
 
-    fetchLocal: () => {
+    /**
+     * fetches task list data from localStorage
+     * @return {Promise} fetcher promise
+     */
+    fetchLocal() {
         return new Promise((resolve, reject) => {
             let tasks = loadDataFromLocal();
             if (tasks) {
@@ -31,9 +42,13 @@ export default {
                 reject('No Tasks Found in Local Storage');
             }
         });
-    },
+    }
 
-    fetchRemote: () => {
+    /**
+     * fetches task list data from a remote source (uses mock data for now)
+     * @return {Promise} fetcher promise
+     */
+    fetchRemote() {
         // simulate remote using mock data for now
         return new Promise((resolve, reject) => {
             if (false) {
@@ -43,4 +58,5 @@ export default {
             }
         });
     }
-};
+}
+export default new TaskSource();
