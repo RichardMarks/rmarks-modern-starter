@@ -27,6 +27,7 @@
   "author": "Richard Marks",
   "license": "MIT",
   "devDependencies": {
+    "alt": "^0.18.1",
     "autoprefixer-loader": "^3.1.0",
     "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
