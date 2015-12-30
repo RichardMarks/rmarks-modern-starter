@@ -15,13 +15,21 @@ export class App extends BaseComponent {
     render() {
         if (this.state.errorMessage) {
             return (
-                <div className="text-danger">{this.state.errorMessage}</div>
+                <div>
+                    <h1>Tasks</h1>
+                    <AddTask />
+                    <div className="text-danger">{this.state.errorMessage}</div>
+                </div>
             );
         }
 
         if (this.state.tasks.length === 0) {
             return (
-                <div><i className="fa fa-spinner"></i>Loading...</div>
+                <div>
+                    <h1>Tasks</h1>
+                    <AddTask />
+                    <span className="fa fa-spinner">Loading...</span>
+                </div>
             );
         }
 

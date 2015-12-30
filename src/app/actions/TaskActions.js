@@ -13,6 +13,14 @@ class TaskActions {
         return task;
     }
 
+    removeTask(id) {
+        return id;
+    }
+
+    completeTask(id) {
+        return id;
+    }
+
     updateTasks(tasks) {
         return tasks;
     }

@@ -28,12 +28,24 @@ export class AddTask extends BaseComponent {
         });
     }
 
+    componentDidMount() {
+        let form = document.getElementById('addTaskForm');
+        form.addEventListener('submit', submitEvent => {
+            submitEvent.preventDefault();
+        });
+    }
+
     render() {
         return (
-            <div className="form-group">
-                <input className="form-control" placeholder="Task name..." type="text" value={this.state.value} onChange={this.onChange} />
-                <button className="btn btn-default pull-right" type="button" onClick={this.addTask}>Add Task</button>
-            </div>
+            <form id="addTaskForm">
+                <div className="input-group input-group-lg">
+                    <input className="form-control" placeholder="Task name..." type="text" value={this.state.value} onChange={this.onChange} />
+                    <span className="input-group-btn">
+                        <button className="btn btn-default" type="submit" onClick={this.addTask}>Add Task</button>
+                    </span>
+                </div>
+                <div className="h1"></div>
+            </form>
         );
     }
 }

@@ -1,24 +1,48 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-
 import {BaseComponent} from './BaseComponent';
+import TaskActions from '../actions/TaskActions';
 
 export class Task extends BaseComponent {
     constructor() {
-        super();
+        super('removeTask', 'completeTask');
     }
 
     render() {
         let { task } = this.props;
-        let elements = [];
 
         if (task.done) {
-            elements.push(<del key={task.id}>{task.name}</del>);
+            return (
+                <li className="list-group-item text-muted h2">
+                <div>
+                    <del>{task.name}</del>&nbsp;
+                    <div className="pull-right btn btn-danger btn-xs" onClick={this.removeTask}>
+                        <button type="button" className="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        Remove Task
+                    </div>
+                    <div className="clearfix"></div>
+                </div>
+                </li>
+            );
         } else {
-            elements.push(<strong key={task.id}>{task.name}</strong>);
+            return (
+                <li className="list-group-item text-info h2">
+                    {task.name}
+                    <div className="pull-left btn btn-primary" onClick={this.completeTask}>
+                        <span className="fa fa-check"></span>
+                        Complete Task
+                    </div>
+                    <div className="clearfix"></div>
+                </li>
+            );
         }
-        return (
-            <li>{elements}</li>
-        );
+    }
+
+    completeTask() {
+        TaskActions.completeTask(this.props.task.id);
+    }
+
+    removeTask() {
+        TaskActions.removeTask(this.props.task.id);
     }
 }

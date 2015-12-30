@@ -10,7 +10,7 @@ export class TaskList extends BaseComponent {
 
     render() {
         return (
-            <ul>
+            <ul className="list-unstyled list-group">
                 {this.props.tasks.map(task => {
                     return (
                         <Task key={task.id} task={task} />
